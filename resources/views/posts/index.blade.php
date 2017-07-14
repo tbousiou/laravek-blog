@@ -1,20 +1,16 @@
 @extends('layouts.master')
 
-@section('content')
+@section('blog-header')
     <div class="blog-header">
       <div class="container">
         <h1 class="blog-title">The Bootstrap Blog</h1>
         <p class="lead blog-description">An example blog template built with Bootstrap.</p>
       </div>
     </div>
+@endsection
 
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-sm-8 blog-main">
-
-          <div class="blog-post">
+@section('content')
+           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>
             <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
 
@@ -77,12 +73,4 @@
             <a class="btn btn-outline-primary" href="#">Older</a>
             <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
           </nav>
-
-        </div><!-- /.blog-main -->
-
-        @include('layouts.sidebar')
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
 @endsection

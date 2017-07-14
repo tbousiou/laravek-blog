@@ -1,12 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
-
-      <div class="row">
-
-        <div class="col-sm-8 blog-main">
-
           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>
             <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
@@ -40,15 +34,4 @@
             <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
           </div><!-- /.blog-post -->
 
-
-
-
-
-        </div><!-- /.blog-main -->
-
-        @include('layouts.sidebar')
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
 @endsection
