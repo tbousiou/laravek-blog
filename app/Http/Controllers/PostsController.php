@@ -22,6 +22,12 @@ class PostsController extends Controller
 
     public function store() {
 
+        $this->validate(request(), [
+
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        
         // Create a new post with the request data
         // Store the post to the database
         Post::create(request(['title', 'body']));
