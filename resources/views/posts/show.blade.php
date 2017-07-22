@@ -21,4 +21,22 @@
             </ul>
           </div>
 
+          {{-- Add a comment --}}
+          <hr>
+          <div class="card">
+              <div class="card-block">
+                <form method="POST" action="/posts/{{ $post->id }}/comments">
+                  {{ csrf_field() }}
+
+                
+                <div class="form-group">
+                  <textarea class="form-control" id="body" name="body" placeholder="Your comment here" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Comment</button>
+              </form>
+              </div>
+          </div>
+
+          @include('layouts.errors')
+
 @endsection
