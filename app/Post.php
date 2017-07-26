@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+//use Illuminate\Support\Facades\Auth;
 class Post extends Model
 {
     //
@@ -22,12 +22,18 @@ class Post extends Model
 
     public function addComment($body) {
         
-        $this->comments()->create(compact('body'));
+        //$this->comments()->create(compact('body'));
         
         // Alternative way of creating a comment
         // Comment::create([
         //     'body' => $body,
         //     'post_id' => $this->id
         // ]);
+
+        Comment::create([
+             'body' => $body,
+             'post_id' => $this->id,
+             'user_id' => auth()->id()
+        ]);
     }
 }
