@@ -7,11 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body', 'user_id'];
 
     // Specify the One to Many relation with Comments
     public function comments() {
         return $this->hasMany(Comment::Class);
+    }
+
+
+    // Specify the relation with user
+    public function user() {
+        return $this->belongsTo(User::Class);
     }
 
     public function addComment($body) {
