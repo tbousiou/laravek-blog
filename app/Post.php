@@ -50,4 +50,9 @@ class Post extends Model
             ->get();
             //->toArray(); 
     }
+
+    public function tags() {
+        // Specify the relation with tags
+        return $this->belongsToMany(Tag::Class);
+    }
 }

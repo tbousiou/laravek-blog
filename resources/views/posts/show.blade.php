@@ -6,8 +6,18 @@
                 {{ $post->title }}
             </h2>
             <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }} by <a href="#">Chris</a></p>
-
+                    
             {{ $post->body}}
+
+            @if(count($post->tags))
+            <div>
+              @foreach ($post->tags as $tag)
+              <a href="/posts/tags/{{ $tag->name }}"><span class="badge badge-default">{{ $tag->name }}</span></a>
+              
+              @endforeach
+            </div>
+            @endif
+          
           </div><!-- /.blog-post -->
 
           <div class="comments">
